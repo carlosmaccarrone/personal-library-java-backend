@@ -9,7 +9,7 @@
 // conjunto (conjunto de aún no incluido) y tiene una distancia mínima 
 // desde la fuente.
 
-// A continuación, se detallan los pasos utilizado:
+// A continuación, se detallan los pasos utilizados:
 
 // 1) Cree un conjunto arcSet (conjunto de árbol de ruta más corta) que realice 
 // un seguimiento de los vértices incluidos en el árbol de ruta más corta, 
