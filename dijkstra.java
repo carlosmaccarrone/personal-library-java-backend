@@ -27,7 +27,7 @@
 // 		C) Actualizar el valor de distancia de todos los vértices adyacentes 
 // 			de U. Para actualizar los valores de distancia, recorra todos los 
 // 			vértices adyacentes. Para cada vértice adyacente v, si la suma del 
-// 			valor de distancia de U(desde la fuente) y el valor del borde U-v, 
+// 			valor de distancia de U(desde la fuente) y el valor del grafo[U][v], 
 // 			es menor que el valor de distancia de v, entonces actualice el 
 // 			valor de distancia de v.
 
@@ -79,6 +79,9 @@ class RutaMasCorta {
 		dist[fuente] = 0;
 
 		for(contador=0 ; contador<V-1 ; contador++){
+			// Calcula para cada iteración vertU como el
+			// vertice próximo más cercano no calculado 
+			// a la fuente
 			int vertU = distanciaMinima(dist, arcSet);
 
 			arcSet[vertU] = true;
@@ -103,6 +106,7 @@ class RutaMasCorta {
 	}
 
 	public static void main(String[] args){
+		// Para el ejemplo usamos una matriz simétrica.
 		// 					Arista	 1	 2	 3	 4	 5	 6	 7	 8 	 9
 		int grafo[][] = new int[][]{{0 , 4 , 0 , 0 , 0 , 0 , 0 , 8 , 0},	// V0
 									{4 , 0 , 8 , 0 , 0 , 0 , 0 , 11, 0},	// V1
@@ -150,3 +154,4 @@ class RutaMasCorta {
 // Distancia desde el vertice 5 al 6: 2		---- V5 -> V6
 // Distancia desde el vertice 5 al 7: 3		---- V5 -> V6 -> V7
 // Distancia desde el vertice 5 al 8: 6		---- V5 -> V2 -> V8
+
