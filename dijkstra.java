@@ -54,11 +54,11 @@ class RutaMasCorta {
 		}
 	}
 
-	int distanciaMinima(int dist[], Boolean setVertices[]){
+	int distanciaMinima(int dist[], Boolean arcSet[]){
 		int min = Integer.MAX_VALUE, min_vert_indice = -1, v;
 
 		for(v=0 ; v<V ; v++){
-			if(setVertices[v] == false && dist[v] <= min){
+			if(arcSet[v] == false && dist[v] <= min){
 				min = dist[v];
 				min_vert_indice = v;
 			}
@@ -69,19 +69,19 @@ class RutaMasCorta {
 	void dijkstra(int grafo[][], int fuente){
 		int dist[] = new int[V];
 		int i, v, contador;
-		Boolean setVertices[] = new Boolean[V];
+		Boolean arcSet[] = new Boolean[V];
 
 		for(i=0 ; i<V ; i++){
 			dist[i] = Integer.MAX_VALUE;
-			setVertices[i] = false;
+			arcSet[i] = false;
 		}
 
 		dist[fuente] = 0;
 
 		for(contador=0 ; contador<V-1 ; contador++){
-			int vertU = distanciaMinima(dist, setVertices);
+			int vertU = distanciaMinima(dist, arcSet);
 
-			setVertices[vertU] = true;
+			arcSet[vertU] = true;
 
 			// Como son nueve vertices se necesita que la matriz
 			// poséa nueve aristas para que sea una Matriz Cuadrada
@@ -90,7 +90,7 @@ class RutaMasCorta {
 			// Podría haber aristas vacías para solucionar eso.
 
 			for(v=0 ; v<V; v++){
-				if(!setVertices[v] && grafo[vertU][v]!=0 &&
+				if(!arcSet[v] && grafo[vertU][v]!=0 &&
 					dist[vertU]!=Integer.MAX_VALUE &&
 					dist[vertU]+grafo[vertU][v]<dist[v]){
 						dist[v] = dist[vertU] + grafo[vertU][v];
@@ -114,7 +114,6 @@ class RutaMasCorta {
 									{8 , 11, 0 , 0 , 0 , 0 , 1 , 0 , 7},	// V7
 									{0 , 0 , 2 , 0 , 0 , 0 , 6 , 7 , 8}		// V8
 								};
-
 
 		RutaMasCorta ruta = new RutaMasCorta();
 
@@ -151,5 +150,3 @@ class RutaMasCorta {
 // Distancia desde el vertice 5 al 6: 2		---- V5 -> V6
 // Distancia desde el vertice 5 al 7: 3		---- V5 -> V6 -> V7
 // Distancia desde el vertice 5 al 8: 6		---- V5 -> V2 -> V8
-
-
