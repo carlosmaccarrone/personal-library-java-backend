@@ -1,4 +1,6 @@
-📚 Personal Library Java Backend
+[![Java CI/CD](https://github.com/carlosmaccarrone/personal-library-java-backend/actions/workflows/ci.yml/badge.svg)](https://github.com/carlosmaccarrone/personal-library-java-backend/actions/workflows/ci.yml)
+
+# 📚 Personal Library Java Backend
 
 A Spring Boot backend for managing a personal library.
 It exposes REST endpoints to handle books, authors, and genres, featuring many-to-many relationships and SQL views for advanced queries.
@@ -17,8 +19,6 @@ The application runs in Docker containers alongside the database and communicate
 - Maven
 
 ---
-
-## 📂 Project Structure
 
 ## 🗄️ Database Model
 
