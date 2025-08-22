@@ -83,7 +83,7 @@ http://localhost:8081/api
 🔹 Genres  
 	`GET /api/genres/all` → List all genres  
 	`POST /api/genres` → Create a new genre  
-	`GET /api/genres/{id}/books → List books by a specific genre  
+	`GET /api/genres/{id}/books` → List books by a specific genre  
 
 ---
 
