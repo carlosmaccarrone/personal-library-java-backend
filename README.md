@@ -30,9 +30,7 @@ The application runs in Docker containers alongside the database and communicate
 
 ---
 
-## 🚀 Running the Project
-
-##🔗 Prerequisites
+## 🔗 Prerequisites
 
 ### 1. Global Docker Network
 
@@ -42,8 +40,13 @@ git clone https://github.com/carlosmaccarrone/personal-library-db.git
 docker network create --driver bridge --attachable library_net
 docker-compose up -d
 ```
+This will create a network shared by both projects (backend & database) and will start the database in the background.
 
-### 2. Clone the Backend and run it.
+---
+
+## 🚀 Running the Project
+
+### 1. Clone the Backend and run it.
 ```bash
 git clone https://github.com/tuusuario/personal-library-backend.git
 cd personal-library-backend
@@ -53,7 +56,7 @@ This will start:
 - PostgreSQL with the personal library database  
 - Spring Boot backend connected to the database  
 
-### 3. Access the API
+### 2. Access the API
 
 By default at:
 http://localhost:8081/api
@@ -63,24 +66,24 @@ http://localhost:8081/api
 ## 📖 Main Endpoints
 
 🔹 Books  
-	GET /api/books → List all books  
-	GET /api/books/{isbn} → Get a book by ISBN  
-	POST /api/books → Create a new book  
-	PUT /api/books/{isbn} → Update a book  
-	DELETE /api/books/{isbn} → Delete a book  
-	GET /api/books/full → List books with authors and genres  
-	GET /api/books/{isbn}/full → Get full details of a book  
+	`GET /api/books` → List all books  
+	`GET /api/books/{isbn}` → Get a book by ISBN  
+	`POST /api/books` → Create a new book  
+	`PUT /api/books/{isbn}` → Update a book  
+	`DELETE /api/books/{isbn}` → Delete a book  
+	`GET /api/books/full` → List books with authors and genres  
+	`GET /api/books/{isbn}/full` → Get full details of a book  
 
 🔹 Authors  
-	GET /api/authors/all → List all authors  
-	GET /api/authors/{id} → Get an author by ID  
-	POST /api/authors → Create a new author  
-	GET /api/authors/{id}/books → List books by a specific author  
+	`GET /api/authors/all` → List all authors  
+	`GET /api/authors/{id}` → Get an author by ID  
+	`POST /api/authors` → Create a new author  
+	`GET /api/authors/{id}/books` → List books by a specific author  
 
 🔹 Genres  
-	GET /api/genres/all → List all genres  
-	POST /api/genres → Create a new genre  
-	GET /api/genres/{id}/books → List books by a specific genre  
+	`GET /api/genres/all` → List all genres  
+	`POST /api/genres` → Create a new genre  
+	`GET /api/genres/{id}/books → List books by a specific genre  
 
 ---
 
