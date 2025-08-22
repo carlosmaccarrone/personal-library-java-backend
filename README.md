@@ -36,8 +36,9 @@ The application runs in Docker containers alongside the database and communicate
 
 Create a global network and set up the database model:
 ```bash
-git clone https://github.com/carlosmaccarrone/personal-library-db.git
 docker network create --driver bridge --attachable library_net
+git clone https://github.com/carlosmaccarrone/personal-library-db.git
+cd personal-library-db
 docker-compose up -d
 ```
 This will create a network shared by both projects (backend & database) and will start the database in the background.
